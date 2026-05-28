@@ -20,7 +20,7 @@ if (sessionStorage.getItem('imageai_user')) {
 // ─────────────────────────────────────────────
 //  URL base de la API
 // ─────────────────────────────────────────────
-const API_URL = 'https://creatufotoconia.onrender.com/'
+const API_URL = 'https://creatufotoconia.onrender.com'
 
 
 // ─────────────────────────────────────────────

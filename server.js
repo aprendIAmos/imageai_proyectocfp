@@ -13,7 +13,7 @@ const db      = require('./db')
 require('dotenv').config()
 
 const app  = express()
-const PORT = process.env.SERVER_PORT || 3000
+const PORT = process.env.PORT || 3000
 
 // ─────────────────────────────────────────────
 //  MIDDLEWARES
@@ -45,7 +45,7 @@ app.post('/login', async (req, res) => {
   try {
     // Buscamos el usuario — usamos ? para evitar SQL injection
     const [rows] = await db.execute(
-      'SELECT id, email FROM usuarios WHERE email = ? AND passsword = ?',
+      'SELECT id, email FROM usuarios WHERE email = ? AND password = ?',
       [email, password]
     )
 
@@ -89,7 +89,7 @@ app.post('/register', async (req, res) => {
     }
 
     const [result] = await db.execute(
-      'INSERT INTO usuarios (email, passsword) VALUES (?, ?)',
+      'INSERT INTO usuarios (email, password) VALUES (?, ?)',
       [email, password]
     )
 
